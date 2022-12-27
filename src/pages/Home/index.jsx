@@ -8,6 +8,7 @@ export function Home() {
     //state
     const [studentName, setStudentName] = useState(""); 
     const [students, setStudents] = useState([]);
+    const [user, setUser] = useState({name: '', avatar: ''});
 
 
     //handler
@@ -25,8 +26,18 @@ export function Home() {
 
     //effect
     useEffect(() => {
-        console.log('useEffect foi chamado');
-    }, [students]);
+        async function getUser() {
+            try {
+                const response = await fetch('https://api.github.com/users/Gustavo-Victor'); 
+                const data = await response.json();
+                const {name, avatar_url} = data;             
+                setUser({name: name, avatar: avatar_url});
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        getUser();
+     }, []);
 
     //content
     return (
@@ -34,8 +45,8 @@ export function Home() {
             <header>
                 <h1>Lista de Presença</h1>
                 <div className='avatar'>
-                    <strong>Rodrigo</strong> 
-                    <img src="https://github.com/rodrigorgtic.png" alt='Rodrigo' title='Rodrigo'/>                   
+                    <strong>{user.name}</strong> 
+                    <img src={user.avatar} alt={user.name} title={user.name}/>                   
                 </div>
             </header>
             <input 
