@@ -10,7 +10,6 @@ export function Home() {
     const [students, setStudents] = useState([]);
     const [user, setUser] = useState({name: '', avatar: ''});
 
-
     //handler
     const handleAddStudent = () => {
         const newStudent = {
