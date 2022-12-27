@@ -6,21 +6,47 @@ import {useState} from 'react';
 //component
 export function Home() {
     //state
-    const [name, setName] = useState(""); 
+    const [studentName, setStudentName] = useState(""); 
+    const [students, setStudents] = useState([]);
+
+
+    //handler
+    const handleAddStudent = () => {
+        const newStudent = {
+            name: studentName,
+            time : new Date().toLocaleTimeString("pt-br", {
+                hour: "2-digit",
+                minute: '2-digit',
+                second: "2-digit"
+            })
+        }
+        setStudents(prevState => [...prevState, newStudent])
+        /*setStudents(function(prevState) {
+            return [...pervState, newStudent];
+        })*/
+        //setStudents([...students, newStudent]); 
+    }
 
     //content
     return (
         <div className='container'>
-            <h1>Nome: {name}</h1>
+            <h1>Lista de Chamadas</h1>
             <input 
             type="text"
             placeholder="Digite o nome..."
-            onChange={e => {setName(e.target.value)}} 
+            onChange={e => setStudentName(e.target.value)} 
             />
-            <button type="button">Enviar</button>
+            <button onClick={handleAddStudent} type="button">Enviar</button>
 
-            <Card name="Rodrigo" time="10:55:25" />
-            <Card name="Juliana" time="10:56:46" />
+            {
+                students.length > 0 ? (
+                    students.map(student => (
+                        <Card name={student.name} time={student.time} />
+                    ))
+                ) : (
+                    <p>Ninguém chegou ainda...</p>
+                )
+            }
         </div>
     );
 }
