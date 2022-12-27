@@ -1,7 +1,7 @@
 //imports
 import './style.css';
 import {Card} from '../../components/Card';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 //component
 export function Home() {
@@ -22,6 +22,11 @@ export function Home() {
         }
         setStudents(prevState => [...prevState, newStudent]);
     }
+
+    //effect
+    useEffect(() => {
+        console.log('useEffect foi chamado');
+    }, [students]);
 
     //content
     return (
