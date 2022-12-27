@@ -1,0 +1,46 @@
+.home {
+    padding: 20px;
+    margin: 3rem auto;
+    max-width: 400px;
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 150px;
+}
+
+.home h1 {
+    text-align: center;
+}
+
+.home input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0.7rem 0;
+    
+}
+
+.home input:focus {
+    border: 1px solid rgba(133, 131, 131, 0.3);
+}
+
+.home button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: rgb(77, 77, 77);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 0.7rem;
+    transition: .2s;
+}
+
+.home button:hover {
+    background-color: black;
+}

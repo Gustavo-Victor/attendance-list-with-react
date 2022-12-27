@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './pages/Home';
 import './styles/global.css';
+import {Home} from './pages/Home';
 
 ReactDOM.createRoot(document.querySelector('#root'))
 .render(
