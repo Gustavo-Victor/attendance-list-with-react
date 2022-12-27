@@ -26,7 +26,13 @@ export function Home() {
     //content
     return (
         <div className='container'>
-            <h1>Lista de Chamadas</h1>
+            <header>
+                <h1>Lista de Presença</h1>
+                <div className='avatar'>
+                    <strong>Rodrigo</strong> 
+                    <img src="https://github.com/rodrigorgtic.png" alt='Rodrigo' title='Rodrigo'/>                   
+                </div>
+            </header>
             <input 
             type="text"
             placeholder="Digite o nome..."

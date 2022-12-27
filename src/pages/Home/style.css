@@ -7,10 +7,31 @@
     max-width: 50%;
 }
 
-.container h1 {
-    font-size: 1.8em;
+.container header {
+    width: 100%;
     margin: 84px 0px 24px;   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
 }
+
+.container header h1 {
+    font-size: 1.8em;
+    flex: 2;
+}
+
+.container .avatar {
+    flex: 0;
+}
+
+.container header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+
 
 .container input {
     width: 100%;
