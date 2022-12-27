@@ -20,7 +20,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Esse projeto foi construído para relembrar e praticar os fundamentos da biblioteca React
+Esse projeto foi construído para relembrar e praticar os fundamentos da biblioteca React. 
+O projeto foi desenvolvido durante um curso introdutório de React pela [Rocketseat](https://app.rocketseat.com.br/) e serve para fins didáticos. 
 
 
 ##  Funcionalidades
