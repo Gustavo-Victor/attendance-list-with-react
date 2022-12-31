@@ -1,14 +1,25 @@
 //imports
 import './style.css';
-import {Card} from '../../components/Card';
+import {Card, CardProps} from '../../components/Card';
 import {useState, useEffect} from 'react';
+
+// types 
+type ProfileResponse = {
+    name: string;
+    avatar_url: string;
+}
+
+type User = {
+    name: string;
+    avatar: string;
+}
 
 //component
 export function Home() {
     //state
     const [studentName, setStudentName] = useState(""); 
-    const [students, setStudents] = useState([]);
-    const [user, setUser] = useState({name: '', avatar: ''});
+    const [students, setStudents] = useState<CardProps[]>([]);
+    const [user, setUser] = useState<User>({} as User);
 
     //handler
     const handleAddStudent = () => {
@@ -28,9 +39,8 @@ export function Home() {
         async function getUser() {
             try {
                 const response = await fetch('https://api.github.com/users/Gustavo-Victor'); 
-                const data = await response.json();
-                const {name, avatar_url} = data;             
-                setUser({name: name, avatar: avatar_url});
+                const data = await response.json() as ProfileResponse;         
+                setUser({name: data.name, avatar: data.avatar_url});
             } catch (e) {
                 console.error(e);
             }
