@@ -24,14 +24,14 @@ Esse projeto foi construído para relembrar e praticar os fundamentos da bibliot
 O projeto foi desenvolvido durante um curso introdutório de React pela [Rocketseat](https://app.rocketseat.com.br/) e serve para fins didáticos. 
 
 
-##  Funcionalidades
+## ⚙️ Funcionalidades
 
 - Adicionar nomes à lista de presença
 - Guardar valores em variável de estado com useState
 - Exibir informações de usuário do Github com fetch e useEffect
 
 
-## Como utilizar 
+## 💻 Como utilizar 
 
 1. Baixe esse repositório e com o seu o terminal, entre no diretório
 
